@@ -7,9 +7,10 @@ const MyComponent = () => {
   const data = useSelector((state) => state.data);
   const isLoading = useSelector((state) => state.isLoading);
   const error = useSelector((state) => state.error);
+
   useEffect(() => {
     dispatch(fetchData());
-  }, []);
+  }, [dispatch]);
 
   if (isLoading) {
     return <p>Loading...</p>;
